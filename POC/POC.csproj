@@ -11,7 +11,6 @@
   </ItemGroup>
 	<Target Name="SwaggerGenerate" AfterTargets="PostBuildEvent">
 		<Exec Command="dotnet tool restore" />
-		<Exec Command="dotnet swagger tofile --output &quot;C:\Users\luis eduardo conde\Desktop\swaggers generados por mi\swaggerluis.json&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; v1" />
+		<Exec Command="dotnet swagger tofile --output &quot;$(OutDir)swagger.json&quot; &quot;$(OutputPath)$(AssemblyName).dll&quot; v1" />
 	</Target>
-
 </Project>
